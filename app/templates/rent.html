@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <style>
+        .night-mode {
+            background: #000;
+            color: #fff;
+        }
+</style>
+
+    <h1>You study in this school: {{ current_user.school }} </h1>
+    <p>
+        <input type="button" value="PUSH ME" id="ren">
+    </p>
+    
+    <script>
+        let body = document.getElementsByTagName('body')[0];
+        let ren = document.getElementById('ren');
+        
+        ren.addEventListener('click', () => {
+            body.classList.toggle('night-mode');
+        });
+</script>
+{% endblock %}
